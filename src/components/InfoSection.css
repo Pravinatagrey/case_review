@@ -1,0 +1,151 @@
+
+.free-case-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel {
+  background: linear-gradient(to bottom right, #F6EDE1, #e8dfd6);
+  padding: 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.left-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(94, 76, 141, 0.4), transparent 60%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.left-content {
+  position: relative;
+  z-index: 1;
+}
+
+.left-panel h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.benefits-list span.icon {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+/* Colored icon backgrounds */
+.icon.lock { background-color: #D4CCF5; color: #2D2056; }
+.icon.check { background-color: #EFDFF0; color: #5B2C45; }
+.icon.forms { background-color: #FBEEC8; color: #6B470D; }
+
+.right-panel {
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.right-panel p {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+
+.circle-container {
+  position: absolute;
+  left: 23%; /* this allows overlap by ~50% on left panel */
+  top: 30%;
+  align-items: center;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #5E4C8D, #2D2056);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem; 
+  align-items: center;
+   
+}
+
+.slot-circle span {
+  transform: rotate(-90deg);
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.contact-button {
+  background-color: #D4AC79;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #c99657;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .free-case-card {
+    flex-direction: row;
+  }
+.circle-container{
+     flex-direction: row; 
+      justify-content: space-between;
+      
+}
+  .left-panel, .right-panel {
+    width: 50%;
+  }
+
+  .right-panel {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
